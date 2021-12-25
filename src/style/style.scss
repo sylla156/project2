@@ -10,6 +10,9 @@
 #app{
   height: 100vh;
   overflow: hidden;
+  padding: 0;
+  margin: 0;
+  outline: 0;
 }
 .header {
   height: 20vh;
@@ -225,3 +228,30 @@
     color: #fff;
   }
 }
+
+
+
+.bgCrew {
+  background-image: url("../assets/crew/background-crew-desktop.jpg") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+
+@include mobile() {
+  background-image: url("../assets/crew/background-crew-mobile.jpg") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+
+@include tab() {
+  background-image: url(../assets/crew/background-crew-tablet.jpg) !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+}
+

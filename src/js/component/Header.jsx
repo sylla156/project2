@@ -30,6 +30,10 @@ export default class Header extends Component {
       document.querySelector('#app').classList = "";
       document.querySelector('#app').classList.add('bgMoom')
       this.setState({rendue: this.props.home});
+    } else if (type == '02 Crew'){
+      document.querySelector('#app').classList = "";
+      document.querySelector('#app').classList.add('bgCrew')
+      this.setState({rendue: this.props.crew});
     }
   }
 
@@ -44,7 +48,7 @@ export default class Header extends Component {
           <div className="header__nav">
             <p className="header__nav--element start" onClick={this.rendue}>00 Home</p>
             <p className="header__nav--element" onClick={this.rendue}>01 Destination</p>
-            <p className="header__nav--element">02 Crew</p>
+            <p className="header__nav--element" onClick={this.rendue}>02 Crew</p>
             <p className="header__nav--element">03 Technology</p>
           </div>
           <div className="btnNav" onClick={this.slide}></div>

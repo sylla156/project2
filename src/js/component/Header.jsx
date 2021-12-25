@@ -7,12 +7,12 @@ export default class Header extends Component {
     this.offSilde = this.offSilde.bind(this);
     this.view = this.view.bind(this);
     this.app = document.querySelector("#app");
+    this.change = true;
     this.state = { view: this.props.home, appStyle: "bgMoon", element: 1 };
   }
 
   componentDidMount() {
     this.setState({ view: this.props.home, appStyle: "bgMoom" });
-
   }
 
   slide() {
@@ -28,11 +28,25 @@ export default class Header extends Component {
   style() {
     this.app.classList = "";
     this.app.classList.add(this.state.appStyle);
+    if (this.change) {
+      setTimeout(() => {
+        document.querySelector(".header__nav--element1").style.borderBottom =
+          "5px solid #fff";
+      }, 100);
+    }
   }
 
+  btnActive(e) {
+    document.querySelectorAll(".header__nav--element").forEach((item) => {
+      item.style.borderBottom = "";
+    });
+    this.change = false;
+    e.target.style.borderBottom = "5px solid #fff";
+  }
 
   view(e) {
     let type = e.target.innerHTML;
+    this.btnActive(e);
     if (type == "00 Home") {
       this.setState({ view: this.props.home, appStyle: "bgMoom", element: 1 });
     } else if (type == "01 Destination") {

@@ -7,7 +7,7 @@
   font-family: "Bellefair", serif;
 }
 
-#app{
+#app {
   height: 100vh;
   overflow: hidden;
   padding: 0;
@@ -60,8 +60,7 @@
       border-bottom: 1px solid #00000000;
 
       &:hover {
-        border-bottom: 1px solid white;
-        border-bottom-width: 5px;
+        border-bottom: 5px solid white;
       }
     }
   }
@@ -181,11 +180,11 @@
 }
 
 .bgMoom {
-    background-image: url("../assets/home/background-home-desktop.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    color: #fff;
+  background-image: url("../assets/home/background-home-desktop.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
 
   @include mobile() {
     background-image: url("../assets/home/background-home-mobile.jpg");
@@ -205,11 +204,11 @@
 }
 
 .bgDest {
-    background-image: url("../assets/destination/background-destination-desktop.jpg") !important;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    color: #fff;
+  background-image: url("../assets/destination/background-destination-desktop.jpg") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
 
   @include mobile() {
     background-image: url("../assets/destination/background-destination-mobile.jpg") !important;
@@ -228,8 +227,6 @@
   }
 }
 
-
-
 .bgCrew {
   background-image: url("../assets/crew/background-crew-desktop.jpg") !important;
   background-repeat: no-repeat;
@@ -237,46 +234,43 @@
   background-size: cover;
   color: #fff;
 
-@include mobile() {
-  background-image: url("../assets/crew/background-crew-mobile.jpg") !important;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: #fff;
+  @include mobile() {
+    background-image: url("../assets/crew/background-crew-mobile.jpg") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+  }
+
+  @include tab() {
+    background-image: url(../assets/crew/background-crew-tablet.jpg) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+  }
 }
 
-@include tab() {
-  background-image: url(../assets/crew/background-crew-tablet.jpg) !important;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: #fff;
-}
-}
-
-
-
-.bgTech{
+.bgTech {
   background-image: url("../assets/technology/background-technology-desktop.jpg") !important;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   color: #fff;
 
-@include mobile() {
-  background-image: url("../assets/technology/background-technology-mobile.jpg") !important;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: #fff;
-}
+  @include mobile() {
+    background-image: url("../assets/technology/background-technology-mobile.jpg") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+  }
 
-@include tab() {
-  background-image: url(../assets/technology/background-technology-tablet.jpg) !important;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: #fff;
+  @include tab() {
+    background-image: url(../assets/technology/background-technology-tablet.jpg) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+  }
 }
-}
-

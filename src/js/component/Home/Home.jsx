@@ -19,7 +19,7 @@ export default class Home extends Component {
           </p>
         </div>
         <div className="home__explore">
-            <p className="home__explore--text">explore</p>
+          <p className="home__explore--text">explore</p>
         </div>
       </div>
     );

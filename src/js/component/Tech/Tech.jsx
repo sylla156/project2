@@ -12,14 +12,11 @@ export default class Tech extends Component {
   constructor(props) {
     super(props);
     this.hanbleChange = this.hanbleChange.bind(this);
-    this.state = { focus: 0, img: [launch, launchL]};
+    this.state = { focus: 0, img: [launch, launchL] };
   }
 
   hanbleChange(e) {
     let type = e.target.innerHTML;
-    document.querySelectorAll(".btnT").forEach((item) => {
-      item.style.backgroundColor = "none";
-    });
     if (type == "1") {
       this.setState({ focus: 0, img: [launch, launchL] });
     } else if (type == "2") {
@@ -29,10 +26,7 @@ export default class Tech extends Component {
     }
   }
 
-
   render() {
-     
-    console.log(this.state.screen)
     return (
       <div className="tech">
         <h3 className="tech__title">

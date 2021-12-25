@@ -1,210 +1,197 @@
-@use '../../../style/component/mixin.scss' as *;
+@use "../../../style/component/mixin.scss" as *;
 
-.destination{
-    height: 80vh;
-    &__title{
-        width:80vw;
-        margin: 0 auto;
+.destination {
+  height: 80vh;
+  &__title {
+    width: 80vw;
+    margin: 0 auto;
+    text-transform: uppercase;
+    span {
+      margin: 0 10px;
+    }
+  }
+
+  &__card {
+    margin: 50px auto 100px 0;
+    width: 80vw;
+    height: 70vh;
+    @include flex(flex, space-between, center);
+
+    &--img {
+      width: 30vw;
+      height: 30vw;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      color: #fff;
+      margin: 0 0 100px 70px;
+    }
+
+    &--desc {
+      width: 40vw;
+      margin: 0 0 0 0vw;
+      height: 70vh;
+      transform: translateX(10vw);
+      justify-self: start;
+
+      &--nav {
+        @include flex(flex, space-between, center);
+        width: 65%;
+        margin: 0 0 50px 0;
+        &__element {
+          padding: 5px;
+          border-bottom: 1px solid #00000000;
+        }
+        &__element:hover {
+          border-bottom: 1px solid white;
+        }
+      }
+
+      &--title {
+        font-size: 8em;
         text-transform: uppercase;
-        span{
-            margin: 0 10px;
+        font-weight: normal;
+      }
+
+      &--details {
+        margin: 0 0 70px 0;
+        width: 90%;
+      }
+      &--hr {
+        width: 90%;
+        height: 1px;
+        background: #ffffff;
+        mix-blend-mode: normal;
+        opacity: 0.25;
+        z-index: 2000;
+      }
+      &--info {
+        margin: 15px 0 0 0;
+        @include flex(flex, space-between, center);
+        width: 65%;
+        font-size: 1.8em;
+
+        &__distance,
+        &__travel {
+          @include flex {
+            flex-direction: column;
+          }
+          p {
+            font-size: 0.5em;
+            margin: 10px;
+          }
         }
+      }
     }
-
-    &__card{
-        margin: 50px auto 100px 0;
-        width: 80vw;
-        height:70vh;
-        @include flex(flex,space-between, center);
-
-        &--img{
-            width: 30vw;
-            height:30vw;
-            background-repeat: no-repeat;
-            background-position:center;
-            background-size: cover;
-            color: #fff;
-            margin: 0 0 100px 70px;
-        }
-
-        &--desc{
-            width: 40vw;
-            margin: 0 0 0 0vw;
-            height:70vh;
-            transform: translateX(10vw);
-            justify-self: start;
-
-            &--nav{
-                @include flex(flex,space-between, center);
-                width: 65%;
-                margin: 0 0 50px 0;
-                &__element{
-                    padding: 5px;
-                    border-bottom: 1px solid #00000000;
-
-                }
-                &__element:hover{
-                    border-bottom: 1px solid white;
-                }
-            }
-
-            &--title{
-                font-size: 8em;
-                text-transform: uppercase;
-                font-weight: normal;
-            }
-
-            &--details{
-                margin: 0 0 70px 0;
-                width: 90%;
-                
-            }
-            &--hr {
-                width: 90%;
-                height: 1px;
-                background: #ffffff;
-                mix-blend-mode: normal;
-                opacity: 0.25;
-                z-index: 2000;
-              }
-            &--info{
-               margin: 15px 0 0 0;
-               @include flex(flex,space-between,center);
-               width:65%;
-               font-size: 1.8em;
-
-               &__distance,&__travel{
-                   @include flex{
-                       flex-direction: column;
-                   }
-                   p{
-                       font-size: 0.5em;
-                       margin: 10px;
-                   }
-               }
-            }
-        }
-    }
+  }
 }
 
+@include tab {
+  .destination {
+    &__card {
+      @include flex {
+        flex-direction: column;
+      }
+      margin: 0px auto 0px auto;
 
-
-
-@include tab{
-
-    .destination{
-        &__card{
-            @include flex{
-                flex-direction: column;
-            }
-            margin: 0px auto 0px auto;
-
-            &--img{
-                margin: 0;
-                padding: 0;
-                width:300px;
-                height:300px;
-            }
-            &--desc{
-                height:40%;
-                &--nav{
-                transform: translate(-40px,30px) ;
-                gap:10px;
-                margin: 0;
-                padding: 0;
-                width: 80%;
-                font-size: 1.2em;
-                }
-                &--title{
-                    font-size: 5em;
-                    margin: 80px auto 40px auto;
-                transform: translate(-60px,0) ;
-
-                }
-                &--details{
-                transform: translate(-150px,0) ;
-                text-align: center; 
-                width: 465px;
-                }
-                &--hr {
-                    transform: translate(-110px,0);
-                    width: 465px;
-    
-                  }
-
-                  &--info{
-                    width:100%;
-                transform: translate(-75px,0) ;
-
-                    font-size: 1.6em;
-                    &__distance,&__travel{
-                        @include flex{
-                            flex-direction: column;
-                        }
-                        p{
-                            font-size: 0.5em;
-                            margin: 10px;
-                        }
-                    }
-                 }
-            }
-
-
+      &--img {
+        margin: 0;
+        padding: 0;
+        width: 300px;
+        height: 300px;
+      }
+      &--desc {
+        height: 40%;
+        &--nav {
+          transform: translate(-40px, 30px);
+          gap: 10px;
+          margin: 0;
+          padding: 0;
+          width: 80%;
+          font-size: 1.2em;
         }
+        &--title {
+          font-size: 5em;
+          margin: 80px auto 40px auto;
+          transform: translate(-60px, 0);
+        }
+        &--details {
+          transform: translate(-150px, 0);
+          text-align: center;
+          width: 465px;
+          margin: 0 0 20px 0;
+        }
+        &--hr {
+          transform: translate(-160px, 0);
+          width: 465px;
+        }
+
+        &--info {
+          width: 100%;
+          transform: translate(-75px, 0);
+
+          font-size: 1.6em;
+          &__distance,
+          &__travel {
+            @include flex {
+              flex-direction: column;
+            }
+            p {
+              font-size: 0.5em;
+              margin: 10px;
+            }
+          }
+        }
+      }
     }
+  }
 }
 
+@include mobile {
+  .destination {
+    &__card {
+      @include flex {
+        flex-direction: column;
+      }
+      margin: 0px auto 0px auto;
 
-@include mobile{
-
-    .destination{
-        &__card{
-            @include flex{
-                flex-direction: column;
-            }
-            margin: 0px auto 0px auto;
-
-            &--img{
-                margin: 0;
-                padding: 0;
-                width:300px;
-                height:300px;
-            }
-            &--desc{
-                height:40%;
-                &--nav{
-                transform: translate(-85px,30px) ;
-                gap:10px;
-                margin: 0;
-                padding: 0;
-                width: 80%;
-                font-size: 1.2em;
-                }
-                &--title{
-                    font-size: 5em;
-                    margin: 40px auto 0px auto;
-                transform: translate(-90px,0) ;
-
-                }
-                &--details{
-                transform: translate(-110px,0) ;
-                text-align: center; 
-                width:300px;
-                margin: 0 0 20px 0;
-                }
-                &--hr {
-                    transform: translate(-110px,0);
-                    width: 300px;
-    
-                  }
-
-                  &--info{
-                   width: 300px;
-                   transform: translate(-110px,0);
-                 }
-            }
-
-
+      &--img {
+        margin: 0;
+        padding: 0;
+        width: 300px;
+        height: 300px;
+      }
+      &--desc {
+        height: 40%;
+        &--nav {
+          transform: translate(-85px, 30px);
+          gap: 10px;
+          margin: 0;
+          padding: 0;
+          width: 80%;
+          font-size: 1.2em;
         }
+        &--title {
+          font-size: 5em;
+          margin: 40px auto 0px auto;
+          transform: translate(-90px, 0);
+        }
+        &--details {
+          transform: translate(-110px, 0);
+          text-align: center;
+          width: 300px;
+          margin: 0 0 20px 0;
+        }
+        &--hr {
+          transform: translate(-110px, 0);
+          width: 300px;
+        }
+
+        &--info {
+          width: 300px;
+          transform: translate(-110px, 0);
+        }
+      }
     }
+  }
 }

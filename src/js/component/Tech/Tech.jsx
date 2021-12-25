@@ -12,30 +12,23 @@ export default class Tech extends Component {
   constructor(props) {
     super(props);
     this.hanbleChange = this.hanbleChange.bind(this);
-    this.state = { focus: 0, img: [launch, launchL] ,screen:undefined};
+    this.state = { focus: 0, img: [launch, launchL]};
   }
 
   hanbleChange(e) {
     let type = e.target.innerHTML;
-    let element = document.querySelectorAll(".btnT");
     document.querySelectorAll(".btnT").forEach((item) => {
       item.style.backgroundColor = "none";
     });
     if (type == "1") {
       this.setState({ focus: 0, img: [launch, launchL] });
-      element.style.background = "white";
     } else if (type == "2") {
       this.setState({ focus: 1, img: [space, spaceL] });
-      element.style.background = "white";
     } else if (type == "3") {
       this.setState({ focus: 2, img: [spaceport, spaceportL] });
-      element.style.background = "white";
     }
   }
 
-  goodImg() {
-  
-  }
 
   render() {
      

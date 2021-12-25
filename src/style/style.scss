@@ -7,11 +7,10 @@
   font-family: "Bellefair", serif;
 }
 
-#app {
+#app{
   height: 100vh;
   overflow: hidden;
 }
-
 .header {
   height: 20vh;
   width: 100vw;
@@ -112,7 +111,7 @@
     }
 
     &__logo {
-    padding: 0px 10px 0px 30px;
+      padding: 0px 10px 0px 30px;
 
       &--logo {
         width: 40px;
@@ -176,5 +175,53 @@
     width: 28px;
     height: 28px;
     margin: 0px 30px 0px 10px;
+  }
+}
+
+.bgMoom {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+
+  @include mobile() {
+    background-image: url("../assets/home/background-home-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+  }
+
+  @include tab() {
+    background-image: url(../assets/home/background-home-tablet.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+  }
+}
+
+.bgDest {
+    background-image: url("../assets/destination/background-destination-desktop.jpg") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+
+  @include mobile() {
+    background-image: url("../assets/destination/background-destination-mobile.jpg") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+  }
+
+  @include tab() {
+    background-image: url(../assets/destination/background-destination-tablet.jpg) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
   }
 }

@@ -2,13 +2,6 @@
 
 
 
-#app{
-    background-image: url('../../../assets/home/background-home-desktop.jpg');
-    background-repeat: no-repeat;
-    background-position:center;
-    background-size: cover;
-    color: #fff;
-}
 
 
 .home{
@@ -83,7 +76,10 @@
             }
 
             h3{
-                font-size: 10em;
+                font-size: 8em;
+                margin: 10px;
+                padding: 0;
+
             }
 
             &--text{
@@ -98,13 +94,11 @@
         &__explore{
             height: 40%;
             width: 40%;
+
+        
         }
     }
 
-    #app{
-        background-image: url(../../../assets/home/background-home-tablet.jpg);
-        color: white;
-    }
 }
 
 
@@ -152,9 +146,5 @@
         }
     }
 
-    #app{
-        background-image: url(../../../assets/home/background-home-tablet.jpg);
-        color: white;
-    }
 }
 

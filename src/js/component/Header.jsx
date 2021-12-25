@@ -6,7 +6,8 @@ export default class Header extends Component {
     this.slide = this.slide.bind(this);
     this.reslide = this.reslide.bind(this);
     this.rendue = this.rendue.bind(this);
-    this.state = {rendue: this.props.dest}
+    this.state = {rendue: this.props.home}
+    document.querySelector('#app').classList.add('bgMoom')
   }
 
   slide() {
@@ -23,7 +24,11 @@ export default class Header extends Component {
     let type = e.target.innerHTML;
     if(type == "01 Destination"){
       this.setState({rendue: this.props.dest});
-    }else{
+      document.querySelector('#app').classList = "";
+      document.querySelector('#app').classList.add('bgDest')
+    } else if (type == "00 Home") {
+      document.querySelector('#app').classList = "";
+      document.querySelector('#app').classList.add('bgMoom')
       this.setState({rendue: this.props.home});
     }
   }

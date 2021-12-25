@@ -1,0 +1,160 @@
+@use "../../../style/component/mixin.scss" as *;
+
+
+
+#app{
+    background-image: url('../../../assets/home/background-home-desktop.jpg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    color: #fff;
+}
+
+
+.home{
+    height: 80vh;
+    @include flex(flex,space-between,center);
+
+    font-family: 'Bellefair', serif;
+
+    &__desc{
+        width: 48%;
+        margin: 0 auto;
+        padding: 0px 30px 100px 80px;
+        &--title{
+            font-size: 1.8em;
+            text-transform: uppercase;
+        }
+
+        h3{
+            font-size: 9.3em;
+            font-weight: normal;
+            margin: 50px 0;
+            padding: 0;
+            text-transform: uppercase;
+        }
+
+        &--text{
+            font-size: 1em;
+            width:90%;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+    }
+
+    &__explore{
+        width: 50%;
+        height: 50%;
+        padding: 0;
+        margin: 0;
+        @include flex;
+        
+        &--text{
+            height: 200px;
+            width: 200px;
+            padding: calc(130px - 1.8em) 0 0 48px ;
+            border: 1px solid #fff;
+            background: #fff;
+            text-align: start;
+            border-radius:50%;
+            color: black;
+            text-transform: uppercase;
+            font-size: 1.5em;
+            font-weight: normal;
+        }
+    }
+}   
+
+
+@include tab{
+    .home{
+        @include flex(flex,center,center){
+            flex-direction: column;
+        }
+
+        
+        &__desc{
+            width: 90%;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            &--title{
+                font-size: 1.4em;
+            }
+
+            h3{
+                font-size: 10em;
+            }
+
+            &--text{
+                font-size:1.3em;
+                width:80%;
+                margin: 0 auto;
+                text-align: center;
+                line-height: 1.5em;
+            }
+        }
+
+        &__explore{
+            height: 40%;
+            width: 40%;
+        }
+    }
+
+    #app{
+        background-image: url(../../../assets/home/background-home-tablet.jpg);
+        color: white;
+    }
+}
+
+
+@include mobile{
+     
+    .home{
+        height: 100vh;
+        overflow: hidden;
+        @include flex(flex,center,center){
+            flex-direction: column;
+        }
+
+        &__desc{
+            width: 90%;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            height: 60vh;
+            &--title{
+                font-size: 1.1em;
+            }
+
+            h3{
+                font-size:6em;
+                margin: 20px 0 30px 0;
+            }
+
+            &--text{
+                font-size:1.3em;
+                width:100%;
+                margin: 0 auto;
+                text-align: center;
+                line-height: 1.2em;
+            }
+        }
+
+        &__explore{
+            height: 40vh;
+            width: 50%;
+            transform: translateY(10px);
+            margin: 0 0 150px 0;
+            &--text{
+                padding: calc(130px - 1.8em) 0 0 42px ;
+            }
+        }
+    }
+
+    #app{
+        background-image: url(../../../assets/home/background-home-tablet.jpg);
+        color: white;
+    }
+}
+

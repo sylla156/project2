@@ -1,0 +1,178 @@
+@use "./component/mixin.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bellefair", serif;
+}
+
+#app {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  height: 20vh;
+  width: 100vw;
+  margin: 0 auto;
+  position: relative;
+  @include flex(flex, space-between, center);
+  &__logo {
+    width: 45%;
+    padding: 0px 10px 0px 40px;
+    &--logo {
+      background-image: url(../assets/shared/logo.svg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &__hr {
+    position: absolute;
+    width: 32%;
+    height: 1px;
+    left: 180px;
+
+    background: #ffffff;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+    z-index: 2000;
+  }
+
+  &__nav {
+    @include flex(flex, space-evenly, center);
+    height: 10vh;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+
+    height: 50%;
+    width: 55%;
+
+    &--element {
+      height: 10vh;
+      padding: 4vh 0 0 0;
+      transition: all 0.1s;
+      &:hover {
+        border-bottom: 1px solid white;
+        border-bottom-width: 5px;
+      }
+    }
+  }
+
+  .btnNav {
+  }
+}
+
+@include tab {
+  .header {
+    height: 10vh;
+    margin: 0;
+    padding: 0;
+    &__hr {
+      display: none;
+    }
+
+    &__nav {
+      width: 64%;
+      height: 10vh;
+      margin: 0;
+    }
+
+    &__logo {
+      &--logo {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
+
+.btnNav {
+  display: none;
+}
+
+.navbar {
+  transform: translateX(200vw);
+  transition: all 0.5s;
+}
+
+@include mobile {
+  #app {
+    overflow: hidden !important;
+  }
+  .header {
+    height: 10vh;
+    &__hr {
+      display: none;
+    }
+
+    &__logo {
+    padding: 0px 10px 0px 30px;
+
+      &--logo {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    &__nav {
+      display: none;
+    }
+  }
+  .navbar {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70vw;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+    padding: 20px 20px;
+    z-index: 1000;
+    @include flex(flex, center, center) {
+      flex-direction: column;
+    }
+
+    &__nav {
+      height: 90vh;
+      @include flex(flex, start, start) {
+        flex-direction: column;
+      }
+      gap: 5vh;
+      font-size: 1.5em;
+      text-transform: uppercase;
+    }
+    &__exit {
+      margin: 50px;
+      height: 10vh;
+      width: 100%;
+      position: relative;
+      height: 50px;
+
+      &--btn {
+        background-image: url(../assets/shared/icon-close.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+  .btnNav {
+    display: block;
+    background-image: url(../assets/shared/icon-hamburger.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 28px;
+    height: 28px;
+    margin: 0px 30px 0px 10px;
+  }
+}

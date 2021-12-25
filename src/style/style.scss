@@ -145,8 +145,12 @@
         flex-direction: column;
       }
       gap: 5vh;
-      font-size: 1.5em;
+      font-size: 1.1em;
       text-transform: uppercase;
+      &--element {
+        width: 70vw;
+        padding: 0 60px;
+      }
     }
     &__exit {
       margin: 50px;

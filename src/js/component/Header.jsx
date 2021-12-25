@@ -6,8 +6,10 @@ export default class Header extends Component {
     this.slide = this.slide.bind(this);
     this.offSilde = this.offSilde.bind(this);
     this.view = this.view.bind(this);
+    this.viewMobile = this.viewMobile.bind(this);
     this.app = document.querySelector("#app");
     this.change = true;
+    this.changeMobile;
     this.state = { view: this.props.home, appStyle: "bgMoon", element: 1 };
   }
 
@@ -33,6 +35,10 @@ export default class Header extends Component {
         document.querySelector(".header__nav--element1").style.borderBottom =
           "5px solid #fff";
       }, 100);
+      setTimeout(() => {
+        document.querySelector(".navbar__nav--element").style.borderRight =
+          "5px solid #fff";
+      }, 100);
     }
   }
 
@@ -42,6 +48,14 @@ export default class Header extends Component {
     });
     this.change = false;
     e.target.style.borderBottom = "5px solid #fff";
+  }
+
+  btnActiveMobile(e) {
+    document.querySelectorAll(".navbar__nav--element").forEach((item) => {
+      item.style.borderRight = "";
+    });
+    this.change = false;
+    e.target.style.borderRight = "5px solid #fff";
   }
 
   view(e) {
@@ -55,6 +69,24 @@ export default class Header extends Component {
       this.setState({ view: this.props.crew, appStyle: "bgCrew", element: 3 });
     } else if (type == "03 Technology") {
       this.setState({ view: this.props.tech, appStyle: "bgTech", element: 4 });
+    }
+  }
+
+  viewMobile(e) {
+    let type = e.target.innerHTML;
+    this.btnActiveMobile(e);
+    if (type == "00 Home") {
+      this.setState({ view: this.props.home, appStyle: "bgMoom", element: 1 });
+      this.offSilde();
+    } else if (type == "01 Destination") {
+      this.setState({ view: this.props.dest, appStyle: "bgDest", element: 2 });
+      this.offSilde();
+    } else if (type == "02 Crew") {
+      this.setState({ view: this.props.crew, appStyle: "bgCrew", element: 3 });
+      this.offSilde();
+    } else if (type == "03 Technology") {
+      this.setState({ view: this.props.tech, appStyle: "bgTech", element: 4 });
+      this.offSilde();
     }
   }
 
@@ -100,10 +132,18 @@ export default class Header extends Component {
             <p className="navbar__exit--btn" onClick={this.offSilde}></p>
           </div>
           <div className="navbar__nav">
-            <p className="navbar__nav--element">00 Home</p>
-            <p className="navbar__nav--element">01 Destination</p>
-            <p className="navbar__nav--element">02 Crew</p>
-            <p className="navbar__nav--element">03 Technology</p>
+            <p className="navbar__nav--element" onClick={this.viewMobile}>
+              00 Home
+            </p>
+            <p className="navbar__nav--element" onClick={this.viewMobile}>
+              01 Destination
+            </p>
+            <p className="navbar__nav--element" onClick={this.viewMobile}>
+              02 Crew
+            </p>
+            <p className="navbar__nav--element" onClick={this.viewMobile}>
+              03 Technology
+            </p>
           </div>
         </div>
         {this.state.view}

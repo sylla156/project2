@@ -1,0 +1,210 @@
+@use "../../../style/component/mixin.scss" as *;
+.tech {
+  height: 80vh;
+  width: 100vw;
+
+  &__title {
+    width: 80vw;
+    margin: 0 auto;
+    text-transform: uppercase;
+    span {
+      margin: 0 10px;
+    }
+  }
+
+  &__card {
+    height: 70vh;
+    width: 100%;
+    @include flex(flex, space-between, center);
+    &--nav {
+      width: 20%;
+      height: 50vh;
+      margin: 0 0 120px 0;
+      p {
+        height: 70px;
+        width: 70px;
+        margin: 50px 10px 30px 110px;
+        border-radius: 50%;
+        transition: all 0.5s;
+        border: 1px solid white;
+        &:hover {
+          background-color: white;
+        }
+
+        span {
+          display: inline-block;
+          height: 60px;
+          width: 60px;
+          margin: 10px 0 0 25px;
+          font-size: 2.5em;
+        }
+
+        &:hover span {
+          color: black;
+        }
+      }
+    }
+
+    &--desc {
+      width: 40%;
+      height: 55vh;
+      padding: 20px 40px 20px 20px;
+      &--devise {
+        font-size: 0.8em;
+        font-weight: normal;
+      }
+
+      &--title {
+        margin: 10px 0 0 0;
+        font-size: 3em;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+
+      &--details {
+        margin: 25px 0 0 0;
+        line-height: 1.8em;
+        width: 80%;
+      }
+    }
+
+    &--img {
+      width: 40%;
+      @include flex(flex, end, center);
+      img {
+        height: 60%;
+        margin: 0 0 100px 0;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .tech {
+    &__title {
+      letter-spacing: 3.375px;
+      position: absolute;
+      top: 14%;
+    }
+
+    &__card {
+      margin: 60px 0 0 0;
+      @include flex {
+        flex-direction: column;
+      }
+      &--nav {
+        order: 2;
+        height: 10%;
+        @include flex(flex, space-evenly, center);
+        padding: 0;
+        margin: 0 0 70px 0;
+        width: 80vw;
+        p {
+          margin: 90px 0 0 0;
+          width: 50px;
+          height: 50px;
+          font-size: 0.51em;
+          span {
+            margin: 10px 0 0 20px;
+          }
+        }
+      }
+
+      &--desc {
+        order: 3;
+        height: 30%;
+        width: 80vw;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        &--devise {
+        }
+
+        &--title {
+          margin: 10px 0 0 0;
+          font-size: 2em;
+        }
+
+        &--details {
+          margin: 10px 0px 0 0px;
+          width: 80vw;
+          text-align: center;
+        }
+      }
+
+      &--img {
+        order: 1;
+        height: 50%;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        img {
+          margin: 40px 0 0 0;
+          padding: 0;
+          height: 100%;
+          width: 100vw;
+        }
+      }
+    }
+  }
+}
+
+@include tab {
+  .tech {
+    &__title {
+      letter-spacing: 3.375px;
+      position: absolute;
+      top: 14%;
+    }
+
+    &__card {
+      margin: 60px 0 0 0;
+      @include flex {
+        flex-direction: column;
+      }
+      &--nav {
+        order: 2;
+        height: 10%;
+        @include flex(flex, space-evenly, center);
+        padding: 0;
+        width: 40vw;
+        p {
+          margin: 150px 0 0 0;
+        }
+      }
+
+      &--desc {
+        order: 3;
+        height: 30%;
+        width: 80vw;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        &--devise {
+        }
+
+        &--title {
+          margin: 20px 0 0 0;
+        }
+
+        &--details {
+          margin: 10px 0 0 70px;
+        }
+      }
+
+      &--img {
+        order: 1;
+        height: 50%;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        img {
+          margin: 40px 0 0 0;
+          padding: 0;
+          height: 100%;
+          width: 100vw;
+        }
+      }
+    }
+  }
+}
